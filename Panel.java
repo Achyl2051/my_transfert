@@ -66,7 +66,7 @@ public class Panel extends JPanel
     {
         this.thisFrame=fr;
     }
-    public JPanel send(Socket socket)
+    public JPanel send()
     {
         JPanel result=new JPanel();
         result.setLayout(null);
@@ -86,12 +86,12 @@ public class Panel extends JPanel
         button[0]=new JButton("send");
         button[0].setFocusable(false);
         button[0].setBounds(width/2,y,width,height-height/4);
-        button[0].addActionListener(new AListner(thisFrame,button[0],this,socket));
+        button[0].addActionListener(new AListner(thisFrame,button[0],this));
         result.add(button[0]);
         button[1]=new JButton("choose");
         button[1].setFocusable(false);
         button[1].setBounds(width*2-x*3,y,width,height-height/4);
-        button[1].addActionListener(new AListner(thisFrame,button[1],this,socket));
+        button[1].addActionListener(new AListner(thisFrame,button[1],this));
         result.add(button[1]);
         y+=button[0].getHeight();
         result.setPreferredSize(new Dimension(width*3+x,y/2+y/4+height));

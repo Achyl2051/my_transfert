@@ -6,10 +6,10 @@ import javax.swing.*;
 
 public class Frame extends JFrame
 {
-    public void sendFile(Socket socket)
+    public void sendFile()
     {
         Panel jo=new Panel(this);
-        this.add(jo.send(socket));
+        this.add(jo.send());
         this.setTitle("My Transfert");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);

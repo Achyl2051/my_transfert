@@ -17,20 +17,12 @@ public class AListner implements ActionListener
     JButton b;
     Panel p;
     Frame f;
-    Socket socket;
     
     public AListner(Frame f,JButton b,Panel p)
     {
         this.b=b;
         this.p=p;
         this.f=f;
-    }
-    public AListner(Frame f,JButton b,Panel p,Socket socket)
-    {
-        this.b=b;
-        this.p=p;
-        this.f=f;
-        this.socket=socket;
     }
     public void actionPerformed(ActionEvent e)
     {
@@ -56,6 +48,7 @@ public class AListner implements ActionListener
                 {
                     try 
                     {
+                        Socket socket =new Socket("localhost",2004);
                         FileInputStream fileInputStream=new FileInputStream(p.getFile().getAbsolutePath());
 
                         DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());

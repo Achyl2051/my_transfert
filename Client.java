@@ -6,7 +6,6 @@ public class Client
 {
     public static void main(String[] args)throws Exception
     {
-        Socket socket =new Socket("localhost",2004);
-        new Frame().sendFile(socket);
+        new Frame().sendFile();
     }
 }
